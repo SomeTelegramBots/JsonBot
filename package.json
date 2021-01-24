@@ -1,0 +1,16 @@
+{
+  "name": "tgbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@shelf/fast-chunk-string": "^1.1.1",
+    "telegraf": "^3.38.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodejs index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
