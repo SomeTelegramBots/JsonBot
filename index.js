@@ -18,16 +18,16 @@ const SubTypes = [
 	"forward",
 ];
 
-const eSubTypes_Text		=	0,
-      eSubTypes_Voice		=	1,
-      eSubTypes_VideoNote	=	2,
-      eSubTypes_Video		=	3,
-      eSubTypes_Animation	=	4,
-      eSubTypes_Sticker		=	5,
-      eSubTypes_Photo		=	6,
-      eSubTypes_Document	=	7,
-      eSubTypes_Audio		=	8,
-      eSubTypes_Forward		=	9;
+const	eSubTypes_Text		=	0,
+		eSubTypes_Voice		=	1,
+		eSubTypes_VideoNote	=	2,
+		eSubTypes_Video		=	3,
+		eSubTypes_Animation	=	4,
+		eSubTypes_Sticker	=	5,
+		eSubTypes_Photo		=	6,
+		eSubTypes_Document	=	7,
+		eSubTypes_Audio		=	8,
+		eSubTypes_Forward	=	9;
 
 // #endregion InternalConstants
 
@@ -181,7 +181,7 @@ bot.on('media_group', async (ctx) => {
 			await parseMessages(ctx, message, __ExtObj);
 		}
 
-		__ExtObj.str += `updateType: ${ctx.updateType}` + ' ' + `updateType: ${JSON.stringify(ctx.updateSubTypes)}` + ' ' + 'info:';
+		__ExtObj.str += `updateType: ${ctx.updateType} updateType: ${JSON.stringify(ctx.updateSubTypes)}\ninfo:`;
 
 		let answerOptions = { reply_to_message_id: ctx.mediaGroup[0].message_id };
 
@@ -216,7 +216,7 @@ bot.on('message', async (ctx) => {
 
 		await parseMessages(ctx, undefined, __ExtObj);
 
-		__ExtObj.str += `updateType: ${ctx.updateType}`+' '+`updateType: ${JSON.stringify(ctx.updateSubTypes)}`+' ' + 'info:';
+		__ExtObj.str += `updateType: ${ctx.updateType} updateType: ${JSON.stringify(ctx.updateSubTypes)}\ninfo:`;
 
 		let answerOptions = { reply_to_message_id: ctx.message.message_id };
 		
